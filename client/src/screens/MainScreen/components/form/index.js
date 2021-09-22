@@ -88,7 +88,7 @@ export default function CForm({
             <div className="card-form__inner">
                 <div className="card-input">
                     <label htmlFor="cardNumber" className="card-input__label">
-                        Card Number
+                        card number
                     </label>
                     <input
                         type="tel"
@@ -106,7 +106,7 @@ export default function CForm({
 
                 <div className="card-input">
                     <label htmlFor="cardName" className="card-input__label">
-                        Card Holder
+                        card holder
                     </label>
                     <input
                         type="text"
@@ -127,7 +127,7 @@ export default function CForm({
                                 htmlFor="cardMonth"
                                 className="card-input__label"
                             >
-                                Expiration Date
+                                expiration date
                             </label>
                             <select
                                 className="card-input__input -select"
@@ -139,7 +139,7 @@ export default function CForm({
                                 onBlur={onCardInputBlur}
                             >
                                 <option value="" disabled>
-                                    Month
+                                    month
                                 </option>
 
                                 {monthsArr.map((val, index) => (
@@ -157,7 +157,7 @@ export default function CForm({
                                 onBlur={onCardInputBlur}
                             >
                                 <option value="" disabled>
-                                    Year
+                                    year
                                 </option>
 
                                 {yearsArr.map((val, index) => (
@@ -190,6 +190,9 @@ export default function CForm({
                         </div>
                     </div>
                 </div>
+                <button class="card-form__button">
+                    submit
+                </button>
             </div>
         </div>
     );
