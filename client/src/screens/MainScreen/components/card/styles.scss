@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Comfortaa:wght@500&display=swap");
 
 * {
-    font-family: 'Comfortaa', cursive;
-    font-size: 16px;
-    text-transform: lowercase;
+    
     box-sizing: border-box;
    }
 
@@ -13,13 +11,15 @@
 
 
 .card-item {
-    max-width: 450px;
+    max-width: 430px;
     height: 270px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     z-index: 2;
     width: 100%;
+    text-transform: lowercase;
+    font-family: 'Comfortaa', cursive;
 
     @media screen and (max-width: 480px) {
         max-width: 310px;
@@ -36,11 +36,12 @@
             &.-front {
                 transform: perspective(1000px) rotateY(180deg) rotateX(0deg)
                     rotateZ(0deg);
+                    box-shadow: 0 20px 60px 0 rgba(14, 42, 90, 0.55);
             }
             &.-back {
                 transform: perspective(1000px) rotateY(0) rotateX(0deg)
                     rotateZ(0deg);
-                // box-shadow: 0 20px 50px 0 rgba(81, 88, 206, 0.65);
+                box-shadow: 0 20px 60px 0 rgba(14, 42, 90, 0.55);
             }
         }
     }
@@ -217,7 +218,7 @@
     }
 
     &__wrapper {
-        font-family: 'Comfortaa', cursive;
+        font-family: 'Source Code Pro', monospace;
         padding: 25px 15px;
         position: relative;
         z-index: 4;
@@ -506,16 +507,20 @@
     cursor: pointer;
 }
 
-.card-input__input {
-    width: 100%;
-    height: 50px;
-    border-radius: 5px;
-    box-shadow: none;
-    border: 1px solid #ced6e0;
-    transition: all 0.3s ease-in-out;
-    font-size: 18px;
-    padding: 5px 15px;
-    background: none;
-    color: #444B54;
+.card-input{
     font-family: 'Comfortaa', cursive;
+
+    &__input {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid #ced6e0;
+        transition: all 0.3s ease-in-out;
+        font-size: 18px;
+        padding: 5px 15px;
+        background: none;
+        color: #444B54;
+        font-family: 'Comfortaa', cursive;
+    }
 }
