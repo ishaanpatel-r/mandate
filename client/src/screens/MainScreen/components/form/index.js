@@ -119,7 +119,7 @@ export default function CForm({
                         className="card-input__input"
                         autoComplete="off"
                         name="cardHolder"
-                        onChange={(text) => setCardHolderName(text)}
+                        onChange={handleFormChange}
                         ref={cardHolderRef}
                         onFocus={(e) => onCardInputFocus(e, 'cardHolder')}
                         onBlur={onCardInputBlur}
@@ -188,7 +188,7 @@ export default function CForm({
                                 maxLength="4"
                                 autoComplete="off"
                                 name="cardCvv"
-                                onChange={(text) => setCardCVV3(text)}
+                                onChange={handleFormChange}
                                 onFocus={onCvvFocus}
                                 onBlur={onCvvBlur}
                                 ref={cardCvv}
