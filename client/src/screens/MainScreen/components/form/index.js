@@ -20,14 +20,13 @@ export default function CForm({
     children
 }) {
     const [cardNumber, setCardNumber] = useState('');
-
+    const [cardCVV3, setCardCVV3] = useState('');
+    const [cardHolderName, setCardHolderName] = useState('');
     const handleFormChange = (event) => {
         const { name, value } = event.target;
-
         onUpdateState(name, value);
     };
 
-    // TODO: We can improve the regex check with a better approach like in the card component.
     const onCardNumberChange = (event) => {
         let { value, name } = event.target;
         let cardNumber = value;
@@ -59,6 +58,13 @@ export default function CForm({
 
     const onCvvBlur = (event) => {
         onUpdateState('isCardFlipped', false);
+    };
+
+    const launchMandate = () => {
+        if(window.ReactNativeWebView) {
+            // TODO: replace 0, 0 with cardCvv, cardHolder
+            window.ReactNativeWebView.postMessage([cardNumber, cardMonth, cardYear, 0, 0].toString())
+        }
     };
 
     // NOTE: Currently the cursor on the card number field gets reset if we remove a number, the code bellow was used
@@ -113,7 +119,7 @@ export default function CForm({
                         className="card-input__input"
                         autoComplete="off"
                         name="cardHolder"
-                        onChange={handleFormChange}
+                        onChange={(text) => setCardHolderName(text)}
                         ref={cardHolderRef}
                         onFocus={(e) => onCardInputFocus(e, 'cardHolder')}
                         onBlur={onCardInputBlur}
@@ -182,7 +188,7 @@ export default function CForm({
                                 maxLength="4"
                                 autoComplete="off"
                                 name="cardCvv"
-                                onChange={handleFormChange}
+                                onChange={(text) => setCardCVV3(text)}
                                 onFocus={onCvvFocus}
                                 onBlur={onCvvBlur}
                                 ref={cardCvv}
@@ -190,7 +196,7 @@ export default function CForm({
                         </div>
                     </div>
                 </div>
-                <button class="card-form__button">
+                <button class="card-form__button" onClick={launchMandate}>
                     submit
                 </button>
             </div>
