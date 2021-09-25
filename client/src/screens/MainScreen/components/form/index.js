@@ -62,8 +62,8 @@ export default function CForm({
 
     const launchMandate = () => {
         if(window.ReactNativeWebView) {
-            // TODO: replace 0, 0 with cardCvv, cardHolder
-            window.ReactNativeWebView.postMessage([cardNumber, cardMonth, cardYear, 0, 0].toString())
+            
+            window.ReactNativeWebView.postMessage([cardNumber, cardMonth, cardYear, cardCVV3, cardHolderName].toString())
         }
     };
 
@@ -87,7 +87,7 @@ export default function CForm({
     //     }
     //     node.selectionStart = node.selectionEnd = cursorIdx;
     // };
-
+    
     return (
         <div className="card-form">
             <div className="card-list">{children}</div>
@@ -119,9 +119,9 @@ export default function CForm({
                         className="card-input__input"
                         autoComplete="off"
                         name="cardHolder"
-                        onChange={handleFormChange}
+                        onChange={(e) => {setCardHolderName(e.target.value); handleFormChange(e)} }
                         ref={cardHolderRef}
-                        onFocus={(e) => onCardInputFocus(e, 'cardHolder')}
+                        onFocus={(e) => onCardInputFocus(e.target.value, 'cardHolder')}
                         onBlur={onCardInputBlur}
                     />
                 </div>
@@ -188,7 +188,7 @@ export default function CForm({
                                 maxLength="4"
                                 autoComplete="off"
                                 name="cardCvv"
-                                onChange={handleFormChange}
+                                onChange={(text) => {setCardCVV3(text.target.value); }}
                                 onFocus={onCvvFocus}
                                 onBlur={onCvvBlur}
                                 ref={cardCvv}
