@@ -97,7 +97,7 @@ const Card = ({
                 <div className="card-item__cover">
                     <img
                         alt=""
-                        src={`/card-background/${BACKGROUND_IMG}`}
+                        src={`/mandate/card-background/${BACKGROUND_IMG}`}
                         className="card-item__bg"
                     />
                 </div>
@@ -112,7 +112,7 @@ const Card = ({
                         <div className="card-item__type">
                             <img
                                 alt={useCardType}
-                                src={`/card-type/${useCardType}.png`}
+                                src={`/mandate/card-type/${useCardType}.png`}
                                 className="card-item__typeImg"
                             />
                         </div>
@@ -239,7 +239,7 @@ const Card = ({
                 <div className="card-item__cover">
                     <img
                         alt=""
-                        src={`/card-background/${BACKGROUND_IMG}`}
+                        src={`/mandate/card-background/${BACKGROUND_IMG}`}
                         className="card-item__bg"
                     />
                 </div>
@@ -262,7 +262,7 @@ const Card = ({
                     <div className="card-item__type">
                         <img
                             alt="card-type"
-                            src={'/card-type/visa.png'}
+                            src={'/mandate/card-type/visa.png'}
                             className="card-item__typeImg"
                         />
                     </div>
