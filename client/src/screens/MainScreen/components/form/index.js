@@ -8,6 +8,7 @@ const monthsArr = Array.from({ length: 12 }, (x, i) => {
 const yearsArr = Array.from({ length: 9 }, (_x, i) => currentYear + i);
 
 export default function CForm({
+    queryParams,
     cardMonth,
     cardYear,
     onUpdateState,
@@ -21,7 +22,6 @@ export default function CForm({
 }) {
     const [cardNumber, setCardNumber] = useState('');
     const [cardCVV3, setCardCVV3] = useState('');
-    const [cardHolderName, setCardHolderName] = useState('');
     const handleFormChange = (event) => {
         const { name, value } = event.target;
         onUpdateState(name, value);

@@ -52,10 +52,14 @@ const MainScreen = () => {
     let onCardInputBlur = useCallback(() => {
         setCurrentFocusedElm(null);
     }, []);
-
+    // 
+    // get query params
+    let queryParams = new URLSearchParams(window.location.search);
+    
     return (
         <div className="wrapper">
             <CForm
+                queryParams = {queryParams}
                 cardMonth={state.cardMonth}
                 cardYear={state.cardYear}
                 onUpdateState={updateStateValues}
@@ -66,6 +70,7 @@ const MainScreen = () => {
                 onCardInputBlur={onCardInputBlur}
             >
                 <Card
+                    queryParams = {queryParams}
                     cardNumber={state.cardNumber}
                     cardHolder={state.cardHolder}
                     cardMonth={state.cardMonth}
