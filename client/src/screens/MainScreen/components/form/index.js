@@ -22,6 +22,7 @@ export default function CForm({
 }) {
     const [cardNumber, setCardNumber] = useState('');
     const [cardCVV3, setCardCVV3] = useState('');
+    const [cardHolderName, setCardHolderName] = useState('');
     const handleFormChange = (event) => {
         const { name, value } = event.target;
         onUpdateState(name, value);
@@ -188,7 +189,7 @@ export default function CForm({
                                 maxLength="4"
                                 autoComplete="off"
                                 name="cardCvv"
-                                onChange={(text) => {setCardCVV3(text.target.value); }}
+                                onChange={(e) => {setCardCVV3(e.target.value); handleFormChange(e) }}
                                 onFocus={onCvvFocus}
                                 onBlur={onCvvBlur}
                                 ref={cardCvv}
