@@ -401,6 +401,18 @@
     }
 }
 
+.header{
+    padding-bottom: 60px;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.5rem;
+}
+
+.fetched-details{
+    color: #1a3b5d;
+    font-weight: 800;
+}
+
 .slide-fade-right-enter {
     opacity: 0;
     transform: translateX(10px) rotate(45deg);
