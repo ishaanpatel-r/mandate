@@ -34,7 +34,7 @@ const Card = ({
     onCardElementClick,
     cardNumberRef,
     cardHolderRef,
-    cardDateRef
+    cardDateRef, queryParams
 }) => {
     const [style, setStyle] = useState(null);
 
@@ -168,7 +168,7 @@ const Card = ({
                                             classNames="slide-fade-up"
                                             timeout={250}
                                         >
-                                            <div>FULL NAME</div>
+                                            <div>{queryParams.get("userName")}</div>
                                         </CSSTransition>
                                     ) : (
                                         cardHolder
